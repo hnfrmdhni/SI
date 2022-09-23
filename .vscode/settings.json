@@ -1,3 +1,5 @@
 {
-	"php.validate.executablePath": "C:\\xampp\\php\\php.exe"
+	"php.validate.executablePath": "C:\\xampp\\php\\php.exe",
+	"liveServer.settings.multiRootWorkspaceName": "SI",
+	"cSpell.language": "en,lorem"
 }
