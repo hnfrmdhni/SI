@@ -1,5 +1,6 @@
 {
 	"php.validate.executablePath": "C:\\xampp\\php\\php.exe",
 	"liveServer.settings.multiRootWorkspaceName": "SI",
-	"cSpell.language": "en,lorem"
+	"cSpell.language": "en,lorem",
+	"editor.linkedEditing": true
 }
