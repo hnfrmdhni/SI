@@ -15,11 +15,43 @@
 		integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
 	</script>
 	<script src="https://code.jquery.com/jquery-3.6.1.js"
-		integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+	integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
-			alert("HAIIIII!")
+			// alert("HAIIIII!")
+
+			$(".nav-link").click(function () {
+				$(".nav-link").removeClass("active");
+				$(this).addClass("active");
+			})
+			$("#btn_home").click(function () {
+				viewHome();
+			})
+			$("#btn_profile").click(function () {
+				viewProfile();
+			})
 		});
+
+		function viewHome() {
+			$.ajax({
+					method: "POST",
+					url: "index.php/C_MyWelcome/getHome",
+					data: {}
+				})
+				.done(function (msg) {
+					$("#content").html(msg);
+				});
+		}
+		function viewProfile() {
+			$.ajax({
+					method: "POST",
+					url: "index.php/C_MyWelcome/getProfile",
+					data: {}
+				})
+				.done(function (msg) {
+					$("#content").html(msg);
+				});
+		}
 
 	</script>
 </head>
@@ -34,10 +66,10 @@
 			<div class="col col-2 bg-success p-2" style="--bs-bg-opacity: .5;">
 				<ul class="nav nav-pills">
 					<div class="row">
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">Home</a>
+						<li class="nav-item" id="btn_home">
+							<a class="nav-link " aria-current="page" href="#">Home</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item" id="btn_profile">
 							<a class="nav-link" href="#">Profile</a>
 						</li>
 						<li class="nav-item">
@@ -51,19 +83,7 @@
 			</div>
 			<div class="col col-10 bg-success p-2" style="--bs-bg-opacity: .2;">
 				<div id="content">
-					<h2>Home</h2>
-					<p align="justify">
-						Lorem ipsum dolor sit amet. Sed deleniti quia rem eligendi consectetur sed fuga nihil et rerum
-						ducimus rem modi minima. Eum ratione consequatur ut voluptatibus repudiandae sed doloribus
-						assumenda
-						qui quidem obcaecati sit maiores voluptatibus? Quia minima qui autem tempore qui maxime
-						voluptatem
-						qui minus officia qui voluptatem iure.
-						Ad consequatur quasi est tenetur eaque vel nulla explicabo sed dolorem nisi! Aut debitis
-						architecto
-						ea quasi laborum non nihil fugit est quos cupiditate. Cum similique enim ut quidem obcaecati est
-						nemo animi ut optio sequi cum nesciunt quaerat et suscipit totam est minima commodi.
-					</p>
+
 				</div>
 			</div>
 		</div>

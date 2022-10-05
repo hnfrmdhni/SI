@@ -22,4 +22,12 @@ class C_MyWelcome extends CI_Controller {
 	{
 		$this->load->view('v_mywelcome');
 	}
+	public function getHome()
+	{
+		$this->load->view('home');
+	}
+	public function getProfile()
+	{
+		$this->load->view('profile');
+	}
 }
